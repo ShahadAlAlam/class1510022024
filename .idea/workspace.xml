@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" afterDir="false" />
+    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Contact Manager application">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,15 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.ContactService">
     <configuration name="ClassCastExceptionTreeSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ClassCastExceptionTreeSet" />
@@ -88,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707586987115</updated>
       <workItem from="1707586988877" duration="1693000" />
-      <workItem from="1707660289853" duration="7395000" />
+      <workItem from="1707660289853" duration="14747000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -97,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707591675799</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Contact Manager application">
+      <created>1707671671640</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707671671640</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,40 +126,51 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="Contact Manager application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact Manager application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>14</line>
+          <line>19</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="7" />
+          <line>38</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="8" />
+          <line>73</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -98,13 +98,13 @@ public class Contact implements Comparable<Contact>{
 
     @Override
     public String toString() {
-        return "Contact{" +
-                "contactId=" + contactId +
-                ", fName='" + fName + '\'' +
-                ", lName='" + lName + '\'' +
-                ", mName='" + mName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
+        return "Contact {" +
+                " contactId=" + Integer.parseInt( String.valueOf( contactId)) + "\n" +
+                " First Name=" + fName + "\n" +
+                " Middle Name=" + mName + "\n" +
+                " Last Name=" + lName + "\n" +
+                " e-mail=" + email + "\n" +
+                " phone=" + phone + "\n" +
                 '}';
     }
 }

@@ -22,8 +22,11 @@ public class ContactService {
                 case 3: // Search contact
                     searchContact(sc);
                     break;
-                case 4: // Remove contact
-                    // ...
+                case 4: // Search contact
+                    exportInfo();
+                    break;
+                case 5: // Search contact
+                    importInformation();
                     break;
                 // ... other options
                 case 0: // Exit
@@ -40,7 +43,8 @@ public class ContactService {
         System.out.println("1: Add Contact");
         System.out.println("2: View All Contacts");
         System.out.println("3: Search Contact");
-        System.out.println("4: Remove Contact");
+        System.out.println("4: Export Information");
+        System.out.println("5: Import Information");
         System.out.println("0: Exit Application");
     }
 
@@ -91,27 +95,32 @@ public class ContactService {
                         if(cons.get(id)!=null){
                             Contact con = cons.get(id);
                             System.out.println("Enter First name?");
-                            String fnameVal = sc.nextLine();
+                            String fnameVal = sc.next();
+                            sc.nextLine();
                             if(!fname.isEmpty()){
                                 con.setfName(fnameVal);
                             }
                             System.out.println("Enter Middle name?");
-                            String mname = sc.nextLine();
+                            String mname = sc.next();
+                            sc.nextLine();
                             if(!mname.isEmpty()){
                                 con.setmName(mname);
                             }
                             System.out.println("Enter Last name?");
-                            String lname = sc.nextLine();
+                            String lname = sc.next();
+                            sc.nextLine();
                             if(!lname.isEmpty()){
                                 con.setlName(lname);
                             }
                             System.out.println("Enter email?");
-                            String email = sc.nextLine();
+                            String email = sc.next();
+                            sc.nextLine();
                             if(!email.isEmpty()){
                                 con.setEmail(email);
                             }
                             System.out.println("Enter Phone Number?");
-                            String phone = sc.nextLine();
+                            String phone = sc.next();
+                            sc.nextLine();
                             if(!phone.isEmpty()){
                                 con.setPhone(phone);
                             }
@@ -141,5 +150,13 @@ public class ContactService {
                     return;
             }
         }
+    }
+
+    private static void exportInfo(){
+        contactRepo.exportInformation();
+    }
+
+    private static void importInformation(){
+        contactRepo.importInformation();
     }
 }
