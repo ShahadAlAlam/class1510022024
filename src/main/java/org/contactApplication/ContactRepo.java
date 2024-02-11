@@ -1,6 +1,7 @@
 package org.contactApplication;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.google.gson.Gson;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -68,18 +69,23 @@ public class ContactRepo {
     }
 
     public void exportInformation() {
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
             String rootPath = System.getProperty("user.dir");
             System.out.println(rootPath );
             File obj = new File(rootPath+"/contactInformation.txt" );
-            Gson gson = new Gson();
+//            Gson gson = new Gson();
             if (obj.createNewFile()) {
                 FileWriter fr = new FileWriter(obj);
-                fr.write(gson.toJson(this.internalContact) );
+                String jsonArray = objectMapper.writeValueAsString(this.internalContact);
+//                fr.write(gson.toJson(this.internalContact) );
+                fr.write(jsonArray);
                 fr.close();
             } else {
                 FileWriter fr = new FileWriter(rootPath+"/contactInformation.txt");
-                fr.write(gson.toJson(this.internalContact) );
+                String jsonArray = objectMapper.writeValueAsString(this.internalContact);
+//                fr.write(gson.toJson(this.internalContact) );
+                fr.write(jsonArray);
                 fr.close();
 
             }
@@ -100,8 +106,10 @@ public class ContactRepo {
                     new InputStreamReader(in, StandardCharsets.UTF_8))
                     .lines()
                     .collect(Collectors.joining("\n"));
-            Gson gson = new Gson();
-            TreeMap<Long,Contact> data = gson.fromJson(sData,TreeMap.class);
+            ObjectMapper objectMapper = new ObjectMapper();
+//            Gson gson = new Gson();
+//            TreeMap<Long,Contact> data = gson.fromJson(sData,TreeMap.class);
+            TreeMap<Long,Contact> data = objectMapper.readValue(sData,TreeMap.class);
            this.internalContact = data;
 //            this.internalContact = JsonLoader.readFile(in);
         } catch (IOException e){
