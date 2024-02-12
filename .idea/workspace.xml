@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="GSON">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/contactInformation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm"
+    "last_opened_file_path": "D:/Shuvo/class1510022024/pom.xml",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.45287356"
   }
 }]]></component>
   <component name="RunManager" selected="Application.ContactService">
@@ -89,6 +96,7 @@
       <updated>1707586987115</updated>
       <workItem from="1707586988877" duration="1693000" />
       <workItem from="1707660289853" duration="15091000" />
+      <workItem from="1707706123854" duration="16553000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -147,45 +155,57 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>20</line>
+          <line>18</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>75</line>
+          <line>99</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>74</line>
+          <line>98</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>77</line>
+          <line>101</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>21</line>
+          <line>19</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="25" />
+          <line>37</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="c.toString()" language="JAVA" />
+        <watch expression="c.toString()" language="JAVA" />
+        <watch expression="internalContact" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

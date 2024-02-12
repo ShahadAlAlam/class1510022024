@@ -1,5 +1,6 @@
 package org.contactApplication;
 
+import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -72,14 +73,18 @@ public class ContactService {
 
     private static void seeAllContact() {
         contactRepo.seeAllContact();
+        Scanner sc = new Scanner(System.in);
+        updateContact(sc,contactRepo.getInternalContact());
     }
 
     private static void searchContact(Scanner sc){
         System.out.println("Enter First Name");
         String fname = sc.next();
-        TreeMap<Long,Contact> cons = contactRepo.searchContact(fname);
-        System.out.println("Found this/these contact informations");
-        System.out.println(cons.toString());
+        TreeMap<String,Contact> cons = contactRepo.searchContact(fname);
+        updateContact(sc,cons);
+    }
+
+    private static void updateContact(Scanner sc,TreeMap<String, Contact> cons) {
         if(cons.size()>0){
             System.out.println("Do you want to Update Contact? 1: update, 2: remove 0: no");
             int a = sc.nextInt();
@@ -87,38 +92,36 @@ public class ContactService {
                 case 1: {
                     boolean updateCons = true;
                     while(updateCons){
-                        System.out.println("Select ID for below contacts");
-                        cons.values().forEach(e->{
-                            System.out.println(e.toString());
-                        });
+                        System.out.println(contactRepo.toString(cons));
+                        System.out.println("Enter Id to Update:");
                         Long id = sc.nextLong();
-                        if(cons.get(id)!=null){
-                            Contact con = cons.get(id);
-                            System.out.println("Enter First name?");
+                        if(cons.get(String.valueOf(id))!=null){
+                            Contact con = cons.get(String.valueOf(id));
+                            System.out.println("Previous First name is "+con.getfName()+" , Enter First name or Leave Empty?");
                             String fnameVal = sc.next();
                             sc.nextLine();
-                            if(!fname.isEmpty()){
+                            if(!fnameVal.isEmpty()){
                                 con.setfName(fnameVal);
                             }
-                            System.out.println("Enter Middle name?");
+                            System.out.println("Previous Middle name is "+con.getmName()+" , Enter Middle name?");
                             String mname = sc.next();
                             sc.nextLine();
                             if(!mname.isEmpty()){
                                 con.setmName(mname);
                             }
-                            System.out.println("Enter Last name?");
+                            System.out.println("Previous Last name is "+con.getlName()+" , Enter Last name?");
                             String lname = sc.next();
                             sc.nextLine();
                             if(!lname.isEmpty()){
                                 con.setlName(lname);
                             }
-                            System.out.println("Enter email?");
+                            System.out.println("Previous email is "+con.getEmail()+" , Enter email?");
                             String email = sc.next();
                             sc.nextLine();
                             if(!email.isEmpty()){
                                 con.setEmail(email);
                             }
-                            System.out.println("Enter Phone Number?");
+                            System.out.println("Previous Phone Number is "+con.getPhone()+" , Enter Phone Number?");
                             String phone = sc.next();
                             sc.nextLine();
                             if(!phone.isEmpty()){
@@ -138,10 +141,15 @@ public class ContactService {
                             System.out.println(e.toString());
                         });
                         Long id = sc.nextLong();
-                        if(cons.get(id)!=null){
-                            Contact con = cons.get(id);
-                            contactRepo.removeContact(con);
-                            updateCons=false;
+                        if(cons.get(String.valueOf(id))!=null){
+                            try {
+                                Contact con = cons.get(String.valueOf(id));
+                                contactRepo.removeContact(con);
+                            } catch(Exception e){
+
+                            } finally {
+                                updateCons=false;
+                            }
                         }
                     }
                     break;

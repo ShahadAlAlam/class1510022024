@@ -1,14 +1,17 @@
 package org.contactApplication;
 
-public class Contact implements Comparable<Contact>{
-    private Long contactId;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Contact implements Comparable<Contact> {
+    private String contactId;
     private String fName;
     private String lName;
     private String mName;
     private String email;
     private String phone;
 
-    public Contact(Long contactId, String fName, String lName, String mName, String email, String phone) {
+    public Contact(String contactId, String fName, String lName, String mName, String email, String phone) {
         this.contactId = contactId;
         this.fName = fName;
         this.lName = lName;
@@ -17,7 +20,7 @@ public class Contact implements Comparable<Contact>{
         this.phone = phone;
     }
 
-    public Contact(Long contactId, String fName, String lName, String email, String phone) {
+    public Contact(String contactId, String fName, String lName, String email, String phone) {
         this.contactId = contactId;
         this.fName = fName;
         this.lName = lName;
@@ -25,17 +28,21 @@ public class Contact implements Comparable<Contact>{
         this.phone = phone;
     }
 
-    public Contact(Long contactId, String fName, String lName,  String phone) {
+    public Contact(String contactId, String fName, String lName,  String phone) {
         this.contactId = contactId;
         this.fName = fName;
         this.lName = lName;
         this.phone = phone;
     }
 
-    public Contact(Long contactId, String fName,   String phone) {
+    public Contact(String contactId, String fName,   String phone) {
         this.contactId = contactId;
         this.fName = fName;
         this.phone = phone;
+    }
+
+    public Contact Contact(Contact value) {
+        return value;
     }
 
     @Override
@@ -48,11 +55,11 @@ public class Contact implements Comparable<Contact>{
             return -1;
     }
 
-    public Long getContactId() {
+    public String getContactId() {
         return contactId;
     }
 
-    public void setContactId(Long contactId) {
+    public void setContactId(String contactId) {
         this.contactId = contactId;
     }
 
@@ -98,13 +105,42 @@ public class Contact implements Comparable<Contact>{
 
     @Override
     public String toString() {
-        return "Contact {" +
-                " contactId=" + Integer.parseInt( String.valueOf( contactId)) + "\n" +
-                " First Name=" + fName + "\n" +
-                " Middle Name=" + mName + "\n" +
-                " Last Name=" + lName + "\n" +
-                " e-mail=" + email + "\n" +
-                " phone=" + phone + "\n" +
-                '}';
+        return Integer.parseInt( String.valueOf( contactId)) +"={" +
+                " contactId=" + Integer.parseInt( String.valueOf( contactId)) + "," +
+                " First Name=" + fName + "," +
+                " Middle Name=" + mName + "," +
+                " Last Name=" + lName + "," +
+                " e-mail=" + email + "," +
+                " phone=" + phone +
+                " }";
+//        return "{" +
+//                " contactId=" + Integer.parseInt( String.valueOf( contactId)) + "," +
+//                " First Name=" + fName + "," +
+//                " Middle Name=" + mName + "," +
+//                " Last Name=" + lName + "," +
+//                " e-mail=" + email + "," +
+//                " phone=" + phone +
+//                " }";
+    }
+
+    public HashMap<String,Object> toHashMap(){
+        HashMap<String,Object> val = new HashMap<>();
+        val.put("contactId",this.contactId);
+        val.put("fName",this.fName);
+        val.put("mName",this.mName);
+        val.put("lName",this.lName);
+        val.put("email",this.email);
+        val.put("phone",this.phone);
+        return val;
+    }
+
+
+    public Contact(Map<String,Object> val){
+        this.contactId = val.get("contactId").toString();
+        this.fName = val.get("fName").toString();
+        this.mName = val.get("mName").toString();
+        this.lName = val.get("lName").toString();
+        this.email = val.get("email").toString();
+        this.phone = val.get("phone").toString();
     }
 }
