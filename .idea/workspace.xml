@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="GSON">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/contactInformation.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactService.java" afterDir="false" />
-    </list>
+    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="final need tuning in taking input" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +89,7 @@
       <updated>1707586987115</updated>
       <workItem from="1707586988877" duration="1693000" />
       <workItem from="1707660289853" duration="15091000" />
-      <workItem from="1707706123854" duration="16553000" />
+      <workItem from="1707706123854" duration="16937000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -126,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707679966204</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="final need tuning in taking input">
+      <created>1707722714501</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707722714501</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +148,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="Contact Manager application" />
     <MESSAGE value="GSON" />
-    <option name="LAST_COMMIT_MESSAGE" value="GSON" />
+    <MESSAGE value="final need tuning in taking input" />
+    <option name="LAST_COMMIT_MESSAGE" value="final need tuning in taking input" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
