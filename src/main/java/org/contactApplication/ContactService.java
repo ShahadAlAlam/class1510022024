@@ -1,10 +1,14 @@
 package org.contactApplication;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
 public class ContactService {
+    private static BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
     private static ContactRepo contactRepo = new ContactRepo();
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -50,24 +54,28 @@ public class ContactService {
     }
 
     private static void addContact(Scanner sc) {
-        System.out.println("Enter First name?");
-        String fname = sc.next();
-        sc.nextLine();
-        System.out.println("Enter Middle name?");
-        String mname = sc.next();
-        sc.nextLine();
-        System.out.println("Enter Last name?");
-        String lname = sc.next();
-        sc.nextLine();
-        System.out.println("Enter email?");
-        String email = sc.next();
-        sc.nextLine();
-        System.out.println("Enter Phone Number?");
-        String phone = sc.next();
-        sc.nextLine();
-        boolean b = contactRepo.addContact( fname, lname, mname, email, phone);
-        if(b){
-            System.out.println("Contact Added to Adderss Book");
+        try {
+            System.out.println("Enter First name?");
+            String fname = "";
+            if ((fname = buf.readLine()).length() > 0){}
+            System.out.println("Enter Middle name?");
+            String mname = "";
+            if ((mname = buf.readLine()).length() > 0){}
+            System.out.println("Enter Last name?");
+            String lname = "";
+            if ((lname = buf.readLine()).length() > 0){}
+            System.out.println("Enter email?");
+            String email = "";
+            if ((email = buf.readLine()).length() > 0){}
+            System.out.println("Enter Phone Number?");
+            String phone = "";
+            if ((phone = buf.readLine()).length() > 0){}
+            boolean b = contactRepo.addContact(fname, lname, mname, email, phone);
+            if (b) {
+                System.out.println("Contact Added to Adderss Book");
+            }
+        } catch (Exception e){
+
         }
     }
 
@@ -96,38 +104,29 @@ public class ContactService {
                         System.out.println("Enter Id to Update:");
                         Long id = sc.nextLong();
                         if(cons.get(String.valueOf(id))!=null){
-                            Contact con = cons.get(String.valueOf(id));
-                            System.out.println("Previous First name is "+con.getfName()+" , Enter First name or Leave Empty?");
-                            String fnameVal = sc.next();
-                            sc.nextLine();
-                            if(!fnameVal.isEmpty()){
-                                con.setfName(fnameVal);
+                            try {
+                                Contact con = cons.get(String.valueOf(id));
+                                System.out.println("Previous First name is " + con.getfName() + " , Enter First name or Leave Empty?");
+                                String fname = "";
+                                if ((fname = buf.readLine()).length() > 0) { con.setfName(fname); }
+                                System.out.println("Previous Middle name is " + con.getmName() + " , Enter Middle name?");
+                                String mname = "";
+                                if ((mname = buf.readLine()).length() > 0) { con.setmName(mname); }
+                                System.out.println("Previous Last name is " + con.getlName() + " , Enter Last name?");
+                                String lname = "";
+                                if ((lname = buf.readLine()).length() > 0) { con.setlName(lname); }
+                                System.out.println("Previous email is " + con.getEmail() + " , Enter email?");
+                                String email = "";
+                                if ((email = buf.readLine()).length() > 0) { con.setEmail(email); }
+                                System.out.println("Previous Phone Number is " + con.getPhone() + " , Enter Phone Number?");
+                                String phone = "";
+                                if ((phone = buf.readLine()).length() > 0) { con.setPhone(phone); }
+                                contactRepo.updateContact(con);
+                            } catch (IOException ioE){
+
+                            } catch (Exception e){
+                                System.out.println(e.getMessage());
                             }
-                            System.out.println("Previous Middle name is "+con.getmName()+" , Enter Middle name?");
-                            String mname = sc.next();
-                            sc.nextLine();
-                            if(!mname.isEmpty()){
-                                con.setmName(mname);
-                            }
-                            System.out.println("Previous Last name is "+con.getlName()+" , Enter Last name?");
-                            String lname = sc.next();
-                            sc.nextLine();
-                            if(!lname.isEmpty()){
-                                con.setlName(lname);
-                            }
-                            System.out.println("Previous email is "+con.getEmail()+" , Enter email?");
-                            String email = sc.next();
-                            sc.nextLine();
-                            if(!email.isEmpty()){
-                                con.setEmail(email);
-                            }
-                            System.out.println("Previous Phone Number is "+con.getPhone()+" , Enter Phone Number?");
-                            String phone = sc.next();
-                            sc.nextLine();
-                            if(!phone.isEmpty()){
-                                con.setPhone(phone);
-                            }
-                            contactRepo.updateContact(con);
                             updateCons=false;
                         }
                     }

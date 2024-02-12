@@ -68,27 +68,8 @@ public class ContactRepo {
                 results.put(c.getContactId(),c);
             }
         }
-
-////        this.getInternalContact().entrySet().iterator();
-//        Iterator itr = this.getInternalContact().entrySet().iterator();
-//        while(itr.hasNext()){
-//            Map.Entry<String,Object> d= (Map.Entry<String,Object>) itr.next();
-//            Contact c =new Contact((Map<String, Object>) d.getValue());
-////            System.out.println(d.getValue());
-//            if(c.getfName().toUpperCase().contains(fname.toUpperCase())){
-//                results.put(c.getContactId(),c);
-//            }
-//        }
         System.out.println("Found this/these contact informations");
         System.out.println(toString(results));
-
-//        for(HashMap.Entry<Long,HashMap<String,Object>> c:this.getInternalContact().entrySet()){
-//            HashMap<String,Object> d =c.getValue();
-//            Contact value = new Contact(d);
-////            if(value.getfName().toUpperCase().contains(fname.toUpperCase())){
-////                results.put(c.getValue().getContactId(),c.getValue());
-////            }
-//        }
         return results;
     }
 
@@ -96,7 +77,7 @@ public class ContactRepo {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             String rootPath = System.getProperty("user.dir");
-            System.out.println(rootPath );
+//            System.out.println(rootPath );
             File obj = new File(rootPath+"/contactInformation.txt" );
 //            Gson gson = new Gson();
             if (obj.createNewFile()) {
@@ -111,8 +92,8 @@ public class ContactRepo {
 //                fr.write(gson.toJson(this.internalContact) );
                 fr.write(jsonArray);
                 fr.close();
-
             }
+            System.out.println("File Exported to \""+rootPath+"\" directory");
         } catch (IOException e){
 
         }
@@ -141,21 +122,7 @@ public class ContactRepo {
                 Contact d=new Contact((Map<String, Object>) c.getValue());
                 this.internalContact.put(d.getContactId(),d);
             }
-
-//            data.stream().forEach(e->{
-//
-//                Contact c = e.get(e.lastKey());
-//                this.internalContact.put(e.lastKey(),c);
-//            });
-
-//            this.internalContact  = data.entrySet().stream().collect(
-//                    Collectors.toMap(
-//                            Map.Entry::getKey,
-//                           Map.Entry::getValue,
-//                    (oldValue,newValue)->newValue,TreeMap::new)
-//            );
-//           this.internalContact = data;
-//            this.internalContact = JsonLoader.readFile(in);
+            System.out.println("File Successfully Imported from \""+rootPath+"\\contactInformation.txt\" ");
         } catch (IOException e){
 
         }
@@ -166,8 +133,6 @@ public class ContactRepo {
         StringBuilder sb = new StringBuilder();
 
         for(Map.Entry<String,Contact> c : this.internalContact.entrySet()){
-//            Contact d=new Contact((Map<String, Object>) c.getValue());
-//            Contact d=new Contact((Map<String, Object>) c.getValue());
             sb.append(c.toString()+"\n");
         }
         return sb.toString();
