@@ -12,6 +12,14 @@ public class QuizQuestion {
 
     private Object userAnswer;
 
+    public QuizQuestion(String questionText, String[] answerChoices, boolean isTrue, int correctAnswerIndex, boolean correctAnswer, String questionType) {
+        this.questionText = questionText;
+        this.answerChoices = answerChoices;
+        this.isTrue = isTrue;
+        this.correctAnswerIndex = correctAnswerIndex;
+        this.correctAnswer = correctAnswer;
+        this.questionType = questionType;
+    }
     public Object getUserAnswer() {
         return userAnswer;
     }
@@ -28,14 +36,6 @@ public class QuizQuestion {
         this.questionType = questionType;
     }
 
-    public QuizQuestion(String questionText, String[] answerChoices, boolean isTrue, int correctAnswerIndex, boolean correctAnswer, String questionType) {
-        this.questionText = questionText;
-        this.answerChoices = answerChoices;
-        this.isTrue = isTrue;
-        this.correctAnswerIndex = correctAnswerIndex;
-        this.correctAnswer = correctAnswer;
-        this.questionType = questionType;
-    }
 
 
     public String getQuestionText() {
