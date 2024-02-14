@@ -26,7 +26,10 @@ public class QuizTopic {
     public double getScore(QuizTopic answerSheet) {
         Double correctAnswers = 0D;
         correctAnswers = answerSheet.getQuestions().stream().mapToDouble(QuizQuestion::getResult).sum();
-
         return (double) correctAnswers / questions.size() * 100;
+    }
+
+    public void addQuistion(QuizQuestion q){
+        questions.add(q);
     }
 }
