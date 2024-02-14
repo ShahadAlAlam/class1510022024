@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Quiz application start">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +96,7 @@
       <workItem from="1707706123854" duration="16937000" />
       <workItem from="1707751451662" duration="4421000" />
       <workItem from="1707839789213" duration="2831000" />
+      <workItem from="1707904201704" duration="3611000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
