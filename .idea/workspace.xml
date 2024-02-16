@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Quiz Application without Time Done">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskManagerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/Tasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/TasksService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taskInformation - Copy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taskInformation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quizInformation - Copy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quizInformation - Copy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quizInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quizInformation.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +58,12 @@
     "spring.configuration.checksum": "bece1f0cd7fd3a20002a838011816b07"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.QuizApp">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.taskManager" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TaskManagerApplication">
     <configuration name="ClassCastExceptionTreeSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ClassCastExceptionTreeSet" />
       <module name="class1510022024" />
@@ -93,8 +103,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TaskManagerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.taskManager.TaskManagerApplication" />
+      <module name="class1510022024" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.taskManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TaskManagerApplication" />
         <item itemvalue="Application.QuizApp" />
         <item itemvalue="Application.ContactService" />
         <item itemvalue="Application.ClassCastExceptionTreeSet" />
@@ -115,7 +139,7 @@
       <workItem from="1707751451662" duration="4421000" />
       <workItem from="1707839789213" duration="2831000" />
       <workItem from="1708015506047" duration="11128000" />
-      <workItem from="1708059073507" duration="16939000" />
+      <workItem from="1708059073507" duration="31182000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -187,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708080537106</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Quiz Application without Time Done">
+      <created>1708081465697</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708081465697</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +304,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
           <line>209</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/taskManager/TasksService.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
