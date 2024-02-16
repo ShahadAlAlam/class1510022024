@@ -27,13 +27,13 @@ public class QuizTopic {
     }
 
 
-    public double getScore(QuizTopic answerSheet) {
+    public double getScore() {
         Double correctAnswers = 0D;
-        correctAnswers = answerSheet.getQuestions().stream().mapToDouble(QuizQuestion::getResult).sum();
+        correctAnswers = this.getQuestions().stream().mapToDouble(QuizQuestion::getResult).sum();
         return (double) correctAnswers / questions.size() * 100;
     }
 
-    public void addQuistion(QuizQuestion q){
+    public void addQuistion(QuizQuestion q) {
         questions.add(q);
     }
 
@@ -41,7 +41,7 @@ public class QuizTopic {
     public String toString() {
         return "QuizTopic{" +
                 "topicName='" + topicName + '\'' +
-                ", questions=" + questions.toString()+
+                ", questions=" + questions.toString() +
                 '}';
     }
 }

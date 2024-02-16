@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Quiz application QuizRepo Start">
-      <change afterPath="$PROJECT_DIR$/quizInformation - Copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quizInformation.txt" afterDir="false" />
+    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Quiz application File Import Export Add Quiz Show Quizes Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" afterDir="false" />
@@ -28,6 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -119,7 +117,7 @@
       <workItem from="1707751451662" duration="4421000" />
       <workItem from="1707839789213" duration="2831000" />
       <workItem from="1708015506047" duration="11128000" />
-      <workItem from="1708059073507" duration="12775000" />
+      <workItem from="1708059073507" duration="16049000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -170,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1707761197071</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Quiz application File Import Export Add Quiz Show Quizes Done">
+      <created>1708077298124</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708077298124</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Quiz application File Import Export Add Quiz Show Quizes Done">
+      <created>1708077323461</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708077323461</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +207,8 @@
     <MESSAGE value="final need tuning in taking input" />
     <MESSAGE value="final task" />
     <MESSAGE value="Quiz application start" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quiz application start" />
+    <MESSAGE value="Quiz application File Import Export Add Quiz Show Quizes Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quiz application File Import Export Add Quiz Show Quizes Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,13 +245,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizTopic.java</url>
@@ -246,14 +254,24 @@
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="73" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
+          <line>203</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="77" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
+          <line>206</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
+          <line>214</line>
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
