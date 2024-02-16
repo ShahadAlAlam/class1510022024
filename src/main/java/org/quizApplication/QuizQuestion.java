@@ -1,16 +1,26 @@
 package org.quizApplication;
 
-public class QuizQuestion {
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-    private String questionText;
-    private String[] answerChoices; // Multiple-choice
-    private int correctAnswerIndex; // Multiple-choice
-    private boolean isTrue; // True/False
-    private boolean correctAnswer; // True/False
+public class QuizQuestion  {
+    //if Method does not Handle with Try catch JACSON Export Error Occures getResult Method
+    //Null value of any Variable does the same like userAnswer variable i Had to initialize it
+
+    public QuizQuestion() {
+
+    }
+
+    private String questionText = "";
+    private String[] answerChoices ={"1","2","3","4"}; // Multiple-choice
+    private Long correctAnswerIndex = 5L; // Multiple-choice
+    private String isTrue = "F"; // True/False
+    private String correctAnswer = "F"; // True/False
     private String questionType; // Type of Question M=Multiple Choice, T=True/False
-    private Object userAnswer;
+    private String userAnswer = "" ;
 
-    public QuizQuestion(String questionText, String[] answerChoices, int correctAnswerIndex, boolean correctAnswer, String questionType) {
+    public QuizQuestion(String questionText, String[] answerChoices, Long correctAnswerIndex, String correctAnswer, String questionType) {
         this.questionText = questionText;
         this.answerChoices = answerChoices;
 //        this.isTrue = isTrue;
@@ -18,10 +28,11 @@ public class QuizQuestion {
         this.correctAnswer = correctAnswer;
         this.questionType = questionType;
     }
+
     public Object getUserAnswer() {
         return userAnswer;
     }
-    public void setUserAnswer(Object userAnswer) {
+    public void setUserAnswer(String userAnswer) {
         this.userAnswer = userAnswer;
     }
     public String getQuestionType() {
@@ -42,36 +53,52 @@ public class QuizQuestion {
     public void setAnswerChoices(String[] answerChoices) {
         this.answerChoices = answerChoices;
     }
-    public boolean isTrue() {
+    public String isTrue() {
         return isTrue;
     }
-    public void setTrue(boolean aTrue) {
-        isTrue = aTrue;
+    public void setTrue(String aTrue) {
+        isTrue = aTrue.toUpperCase();
     }
-    public int getCorrectAnswerIndex() {
+    public Long getCorrectAnswerIndex() {
         return correctAnswerIndex;
     }
-    public void setCorrectAnswerIndex(int correctAnswerIndex) {
+    public void setCorrectAnswerIndex(Long correctAnswerIndex) {
         this.correctAnswerIndex = correctAnswerIndex;
     }
-    public boolean getIsCorrectAnswer() {
+    public String getIsCorrectAnswer() {
         return correctAnswer;
     }
-    public void setCorrectAnswer(boolean correctAnswer) {
-        this.correctAnswer = correctAnswer;
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer.toUpperCase();
     }
-    public int getResult() {
+    public Long getResult() {
+        //if Method does not Handle with Try catch JACSON Export Error Occures
+        try{
         if(this.questionType.equals("M")){
-            if(Integer.parseInt(this.userAnswer.toString())==this.correctAnswerIndex){
-                return 1;
+            if(Integer.parseInt(this.userAnswer)==this.correctAnswerIndex){
+                return 1L;
             } else
-                return 0;
+                return 0L;
         } else if(this.questionType.equals("T")){
-            if(Boolean.parseBoolean(this.userAnswer.toString()) == this.correctAnswer){
-                return 1;
+            if(this.userAnswer.equals( this.correctAnswer) ){
+                return 1L;
             } else
-                return 0;
+                return 0L;
         }
-        return 0;
+        return 0L;} catch (Exception E){
+            return 0L;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "QuizQuestion{" +
+                "questionText='" + questionText + '\'' +
+                ", answerChoices=" + Arrays.toString(answerChoices) +
+                ", correctAnswerIndex=" + correctAnswerIndex +
+                ", isTrue=" + isTrue +
+                ", correctAnswer=" + correctAnswer +
+                ", questionType='" + questionType + '\'' +
+                '}';
     }
 }

@@ -7,17 +7,67 @@ import java.util.*;
 
 public class QuizApp {
     private static BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-    private static Map<String,QuizTopic> quizTopicMap = new LinkedHashMap<>();
+    private static List<QuizTopic> quizTopicMap = new ArrayList<>();
     private static QuizTopic quizTopic = new QuizTopic();
     private static QuizRepo quizRepo = new QuizRepo();
     private static String name="";
     public static void main(String[] args) {
         System.out.println("Welcome to Quiz Application");
 
-//        while(name.length()<=0){
-//            System.out.println("Plese Enter your name");
-//            try { name = buf.readLine(); }catch(IOException ex){ }
-//        }
+        while(name.length()<=0){
+            System.out.println("Plese Enter your name");
+            try { name = buf.readLine(); }catch(IOException ex){ }
+        }
+        showOprions();
+
+    }
+
+    private static void showOprions(){
+        boolean inpLoop = true;
+
+        while(inpLoop) {
+            int inp = 10;
+            System.out.println("Select one of The Options Below");
+            System.out.println("1. Add Quiz");
+            System.out.println("2. Show Quizes");
+            System.out.println("3. Export Quizes");
+            System.out.println("4. Import Quizes");
+            System.out.println("5. Participate into Quiz");
+            System.out.println("0. Exit......");
+            try {
+                while (inpLoop) {
+                    inp = Integer.parseInt(buf.readLine());
+                    if (inp >= 0 || inp < 6) {
+                        inpLoop = false;
+                    }
+                }
+                inpLoop = true;
+                switch (inp) {
+                    case 1:
+                        addQuiz();
+                        break;
+                    case 2:
+                        showQuizList();
+                        break;
+                    case 3:
+                        exportQuest();
+                        break;
+                    case 4:
+                        importQuest();
+                        break;
+                    case 5:
+                        showQuiz();
+                        break;
+                    case 0:
+
+                        System.out.println("Exiting Application...");
+                        System.exit(0);
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private static void addQuiz(){
@@ -35,56 +85,86 @@ public class QuizApp {
         while(addQuistion) {
             System.out.println("To add quistion press 1 else 0");
                 try {
-                    if (buf.read() == 1) {
+                    int inp =Integer.parseInt(buf.readLine());
+                    if (inp== 1) {
 //                private String questionText;
 //                private String[] answerChoices; // Multiple-choice
 //                private int correctAnswerIndex; // Multiple-choice
 //                private boolean isTrue; // True/False
 //                private boolean correctAnswer; // True/False
 //                private String questionType; // Type of Question M=Multiple Choice, T=True/False
+
+                        System.out.println("Add quistion Type , M for Multiple Choice T for True False");
+                        String quistionType = "";
+                        while((quistionType.isEmpty()) ||
+                                (quistionType.trim().toUpperCase().replaceAll("[T|M]","").length()>0)){
+                            quistionType = buf.readLine();
+                        }
                         System.out.println("Add quistion text");
-                        String quistionText = buf.readLine();
-                        String quistionType = buf.readLine();
-                        String[] answerChoices = new String[4];
-                        int correctAnswerIndex = 5;
-                        boolean isTrue = false;
-                        if (quistionType.equals("M")) {
+
+                        String quistionText ="";
+                        while((quistionText.trim().isEmpty())){
+                            quistionText = buf.readLine();
+                        }
+                        String[] answerChoices = {" "," "," "," "};
+                        Long correctAnswerIndex = 5L;
+                        String isTrue = "F";
+                        if (quistionType.toUpperCase().equals("M")) {
                             for (int i = 0; i < 4; i++) {
                                 System.out.println("Multiple Choice no: " + i);
                                 answerChoices[i] = buf.readLine();
                             }
                             System.out.println("Correct Answer index");
-                            correctAnswerIndex = buf.read();
+                            correctAnswerIndex =Long.parseLong( buf.readLine());
                         } else {
-                            isTrue = buf.readLine().equals("T");
+                            System.out.println("\"T\" for true else false ");
+                            isTrue = buf.readLine().toUpperCase().equals("T")==true?"T":"F";
                         }
                         q.addQuistion(new QuizQuestion(quistionText, answerChoices, correctAnswerIndex, isTrue, quistionType));
+                    } else {
+                        addQuistion = false;
                     }
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+        }
+        if(!qTopicName.isEmpty() && qTopicName.trim().length()>0){
+            quizRepo.addQuizToList(q);
+        }
+    }
+    private static void showQuizList() {
+//        quizRepo.importQuizData();
+        quizTopicMap = quizRepo.getQuizList();
+
+        for(QuizTopic e : quizTopicMap){
+            System.out.println("Topic Name = "+e.getTopicName());
         }
     }
     private static void showQuiz(){
         quizRepo.importQuizData();
         quizTopicMap = quizRepo.getQuizList();
 
-        for(Map.Entry<String,QuizTopic> e : quizTopicMap.entrySet()){
-            System.out.println("Topic Name"+e.getKey());
+        for(QuizTopic e : quizTopicMap){
+            System.out.println("Topic Name = "+e.getTopicName());
         }
         System.out.println("Please Select Quiz Topic");
         String quiz ="";
         try {
             while ((quiz= buf.readLine()).trim().length()<=0){
-                if(quizTopicMap.get(quiz)==null){
+                String finalQuiz = quiz;
+                if(quizTopicMap.stream().filter(e->e.getTopicName().toUpperCase().equals(finalQuiz.toUpperCase())
+                ) ==null){
                     System.out.println("Please Select Correct Quiz");
                     quiz="";
                 }
             }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        quizTopic = quizTopicMap.get(quiz);
+        String finalQuiz1 = quiz;
+        quizTopic = (QuizTopic) quizTopicMap.stream().filter(e->e.getTopicName().toUpperCase().equals(finalQuiz1.toUpperCase()));
+        quizStart();
     }
 
     private static void quizStart(){
@@ -126,5 +206,14 @@ public class QuizApp {
             }
         }
 
+    }
+
+    private static void exportQuest(){
+        quizRepo.exportQuizData();
+    }
+
+
+    private static void importQuest(){
+        quizRepo.importQuizData();
     }
 }

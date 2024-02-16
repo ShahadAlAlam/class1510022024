@@ -1,24 +1,28 @@
 package org.quizApplication;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class QuizTopic {
     private String topicName;
-    private ArrayList<QuizQuestion> questions;
+    private List<QuizQuestion> questions = new ArrayList<>();
 
     public String getTopicName() {
         return topicName;
     }
 
     public void setTopicName(String topicName) {
+
         this.topicName = topicName;
     }
 
-    public ArrayList<QuizQuestion> getQuestions() {
+    public List<QuizQuestion> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(ArrayList<QuizQuestion> questions) {
+    public void setQuestions(List<QuizQuestion> questions) {
         this.questions = questions;
     }
 
@@ -31,5 +35,13 @@ public class QuizTopic {
 
     public void addQuistion(QuizQuestion q){
         questions.add(q);
+    }
+
+    @Override
+    public String toString() {
+        return "QuizTopic{" +
+                "topicName='" + topicName + '\'' +
+                ", questions=" + questions.toString()+
+                '}';
     }
 }
