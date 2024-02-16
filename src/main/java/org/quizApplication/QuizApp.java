@@ -230,9 +230,14 @@ public class QuizApp {
                 throw new RuntimeException(e);
             }
         } else if (q.getQuestionType().equals("M")) {
-            Arrays.stream(q.getAnswerChoices()).sequential().forEach(
-                    e->System.out.println(e)
-            );
+            int ind = 0;
+            for(String s:q.getAnswerChoices()){
+                System.out.println(ind+". "+s);
+                ind++;
+            }
+//            Arrays.stream(q.getAnswerChoices()).sequential().forEach(
+//                    e->System.out.println(e)
+//            );
             System.out.println("Enter Answer index for this question ");
             String ans = "";
             try {

@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Quiz application File Import Export Add Quiz Show Quizes Done">
+    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Quiz Application without Time Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizInformation - Copy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quizInformation - Copy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quizInformation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizTopic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizTopic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <workItem from="1707751451662" duration="4421000" />
       <workItem from="1707839789213" duration="2831000" />
       <workItem from="1708015506047" duration="11128000" />
-      <workItem from="1708059073507" duration="16049000" />
+      <workItem from="1708059073507" duration="16939000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -182,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708077323461</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Quiz Application without Time Done">
+      <created>1708080537106</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708080537106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +213,8 @@
     <MESSAGE value="final task" />
     <MESSAGE value="Quiz application start" />
     <MESSAGE value="Quiz application File Import Export Add Quiz Show Quizes Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quiz application File Import Export Add Quiz Show Quizes Done" />
+    <MESSAGE value="Quiz Application without Time Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quiz Application without Time Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -267,11 +273,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
           <line>209</line>
           <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
-          <line>214</line>
-          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
