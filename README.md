@@ -7,7 +7,7 @@
   5. Export and Import Contact Information
   
 ## Details
-  Used TreeMap to Store Contact Information, FasterXML/jackson to Store and Load information from external text file.
+  It is a CLI Application. Used TreeMap to Store Contact Information, FasterXML/jackson to Store and Load information from external text file.
   
 ## Hardels:
   As Jackson converts the elements as LinkedHashMap, I had to write code to convert it to Expected POJO.
