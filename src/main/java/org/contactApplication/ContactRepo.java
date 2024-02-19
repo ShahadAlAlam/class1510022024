@@ -1,6 +1,8 @@
 package org.contactApplication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import org.dataExpImporter.FileManager;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -74,6 +76,12 @@ public class ContactRepo {
 
     public void exportInformation() {
         ObjectMapper objectMapper = new ObjectMapper();
+
+        SimpleModule module = new SimpleModule();
+        module.addSerializer(ContactData.class, new ContactSerializer());
+        objectMapper.registerModule(module);
+        ContactData conData = new ContactData(this.internalContact) ;
+
         try {
             String rootPath = System.getProperty("user.dir");
 //            System.out.println(rootPath );
@@ -81,13 +89,15 @@ public class ContactRepo {
 //            Gson gson = new Gson();
             if (obj.createNewFile()) {
                 FileWriter fr = new FileWriter(obj);
-                String jsonArray = objectMapper.writeValueAsString(this.internalContact);
+//                String jsonArray = objectMapper.writeValueAsString (this.internalContact);
+                String jsonArray = objectMapper.writeValueAsString (conData);
 //                fr.write(gson.toJson(this.internalContact) );
                 fr.write(jsonArray);
                 fr.close();
             } else {
                 FileWriter fr = new FileWriter(rootPath+"/contactInformation.txt");
-                String jsonArray = objectMapper.writeValueAsString(this.internalContact);
+//                String jsonArray = objectMapper.writeValueAsString(this.internalContact);
+                String jsonArray = objectMapper.writeValueAsString (conData);
 //                fr.write(gson.toJson(this.internalContact) );
                 fr.write(jsonArray);
                 fr.close();
@@ -99,6 +109,11 @@ public class ContactRepo {
     }
 
     public void importInformation() {
+//        FileManager<TreeMap<String,Contact>> f = new FileManager<>();
+//        this.internalContact.clear();
+//        this.internalContact = f.importInformation(this.internalContact,"contactInformation.txt");
+//
+        //TESTING SERILIZER
         try {
             String rootPath = System.getProperty("user.dir");
             System.out.println(rootPath );
@@ -111,20 +126,40 @@ public class ContactRepo {
                     .lines()
                     .collect(Collectors.joining("\n"));
             ObjectMapper objectMapper = new ObjectMapper();
-//            Gson gson = new Gson();
-//            TreeMap<Long,Contact> data = gson.fromJson(sData,TreeMap.class);
-            TreeMap<String,Contact> data = objectMapper.readValue(sData,TreeMap.class);
-
-            this.internalContact.clear();
-
-            for(Map.Entry<String,Contact> c : data.entrySet()){
-                Contact d=new Contact((Map<String, Object>) c.getValue());
-                this.internalContact.put(d.getContactId(),d);
-            }
+            SimpleModule module = new SimpleModule();
+            module.addDeserializer(ContactData.class, new ContactDeserializer());
+            objectMapper.registerModule(module);
+            TreeMap<String,Contact> data = objectMapper.readValue(sData,ContactData.class);
+//            TreeMap<String,Contact> data = objectMapper.readValue(sData,TreeMap.class);
+            this.internalContact = data;
             System.out.println("File Successfully Imported from \""+rootPath+"\\contactInformation.txt\" ");
-        } catch (IOException e){
+        } catch (IOException e){}
 
-        }
+        //Working Import for TreeMap<String,Contact>
+//        try {
+//            String rootPath = System.getProperty("user.dir");
+//            System.out.println(rootPath );
+//
+//            File obj = new File(rootPath+"/contactInformation.txt" );
+//            InputStream in = new FileInputStream(obj);
+//
+//            String sData = new BufferedReader(
+//                    new InputStreamReader(in, StandardCharsets.UTF_8))
+//                    .lines()
+//                    .collect(Collectors.joining("\n"));
+//            ObjectMapper objectMapper = new ObjectMapper();
+////            Gson gson = new Gson();
+////            TreeMap<Long,Contact> data = gson.fromJson(sData,TreeMap.class);
+//            TreeMap<String,Contact> data = objectMapper.readValue(sData,TreeMap.class);
+//
+//            this.internalContact.clear();
+//
+//            for(Map.Entry<String,Contact> c : data.entrySet()){
+//                Contact d=new Contact((Map<String, Object>) c.getValue());
+//                this.internalContact.put(d.getContactId(),d);
+//            }
+//            System.out.println("File Successfully Imported from \""+rootPath+"\\contactInformation.txt\" ");
+//        } catch (IOException e){}
     }
 
     @Override
