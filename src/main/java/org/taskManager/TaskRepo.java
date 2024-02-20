@@ -1,6 +1,10 @@
 package org.taskManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import org.contactApplication.Contact;
+import org.contactApplication.ContactData;
+import org.contactApplication.ContactSerializer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -50,21 +54,27 @@ public class TaskRepo {
 
     public void exportTasks(){
         ObjectMapper objectMapper = new ObjectMapper();
+
+        SimpleModule module = new SimpleModule();
+        module.addSerializer(TaskData.class, new TaskSerializer());
+        objectMapper.registerModule(module);
+        TaskData conData = new TaskData(this.taskList) ;
+
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
         objectMapper.setDateFormat(df);
         try {
             String rootPath = System.getProperty("user.dir");
             File obj = new File(rootPath + "/taskInformation.txt");
-//            Gson gson = new Gson();
             if (obj.createNewFile()) {
                 FileWriter fr = new FileWriter(obj);
-                String jsonArray = objectMapper.writeValueAsString(this.taskList);
-//                fr.write(gson.toJson(this.internalContact) );
+//                String jsonArray = objectMapper.writeValueAsString(this.taskList);
+                String jsonArray = objectMapper.writeValueAsString(conData);
                 fr.write(jsonArray);
                 fr.close();
             } else {
                 FileWriter fr = new FileWriter(rootPath + "/taskInformation.txt");
-                String jsonArray = objectMapper.writeValueAsString(this.taskList);
+//                String jsonArray = objectMapper.writeValueAsString(this.taskList);
+                String jsonArray = objectMapper.writeValueAsString(conData);
                 fr.write(jsonArray);
                 fr.close();
             }
@@ -76,6 +86,7 @@ public class TaskRepo {
 
     public void importInformation() {
         try {
+
             String rootPath = System.getProperty("user.dir");
             System.out.println(rootPath );
 
@@ -87,36 +98,58 @@ public class TaskRepo {
                     .lines()
                     .collect(Collectors.joining("\n"));
             ObjectMapper objectMapper = new ObjectMapper();
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
-            objectMapper.setDateFormat(df);
-
-
-            LinkedHashMap<String, Tasks> data = objectMapper.readValue(sData,LinkedHashMap.class);
-
-            this.taskList.clear();
-
-            for(Map.Entry<String,Tasks> c : data.entrySet()){
-                Object o =  c.getValue();
-                LinkedHashMap<String,Object> ts = (LinkedHashMap<String, Object>) o;
-//                Long taskId, String taskName, String taskDetails, Date createdDate, Date targetDate, String status
-
-
-                Tasks d=new Tasks(
-                        Long.parseLong(String.valueOf(ts.get("taskId"))),
-                        String.valueOf(ts.get("taskName")),
-                        String.valueOf(ts.get("taskDetails")),
-                        df.parse( String.valueOf( ts.get("createdDate"))),
-                        df.parse( String.valueOf(ts.get("targetDate"))),
-                        String.valueOf(ts.get("status"))
-                );
-                this.taskList.put(String.valueOf( d.getTaskId()),d);
-            }
+            SimpleModule module = new SimpleModule();
+            module.addDeserializer(TaskData.class,new TaskDeserializer());
+            objectMapper.registerModule(module);
+            HashMap<String, Tasks> data = objectMapper.readValue(sData,TaskData.class);
+            this.taskList = data;
             System.out.println("File Successfully Imported from \""+rootPath+"\\taskInformation.txt\" ");
-        } catch (IOException e){
-
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println("File Failed to Import due to "+e.getMessage());
         }
+//        //Working
+//        try {
+//            String rootPath = System.getProperty("user.dir");
+//            System.out.println(rootPath );
+//
+//            File obj = new File(rootPath+"/taskInformation.txt" );
+//            InputStream in = new FileInputStream(obj);
+//
+//            String sData = new BufferedReader(
+//                    new InputStreamReader(in, StandardCharsets.UTF_8))
+//                    .lines()
+//                    .collect(Collectors.joining("\n"));
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
+//            objectMapper.setDateFormat(df);
+//
+//
+//            LinkedHashMap<String, Tasks> data = objectMapper.readValue(sData,LinkedHashMap.class);
+//
+//            this.taskList.clear();
+//
+//            for(Map.Entry<String,Tasks> c : data.entrySet()){
+//                Object o =  c.getValue();
+//                LinkedHashMap<String,Object> ts = (LinkedHashMap<String, Object>) o;
+////                Long taskId, String taskName, String taskDetails, Date createdDate, Date targetDate, String status
+//
+//
+//                Tasks d=new Tasks(
+//                        Long.parseLong(String.valueOf(ts.get("taskId"))),
+//                        String.valueOf(ts.get("taskName")),
+//                        String.valueOf(ts.get("taskDetails")),
+//                        df.parse( String.valueOf( ts.get("createdDate"))),
+//                        df.parse( String.valueOf(ts.get("targetDate"))),
+//                        String.valueOf(ts.get("status"))
+//                );
+//                this.taskList.put(String.valueOf( d.getTaskId()),d);
+//            }
+//            System.out.println("File Successfully Imported from \""+rootPath+"\\taskInformation.txt\" ");
+//        } catch (IOException e){
+//
+//        } catch (ParseException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Override
