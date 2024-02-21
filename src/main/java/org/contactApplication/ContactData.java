@@ -16,7 +16,7 @@ public class ContactData extends TreeMap<String,Contact> {
         super.put(s,c);
     }
 
-    public void addSerializer(Class<ContactData> contactDataClass, ContactSerializer contactSerializer) {
-
-    }
+//    public void addSerializer(Class<ContactData> contactDataClass, ContactSerializer contactSerializer) {
+//
+//    }
 }

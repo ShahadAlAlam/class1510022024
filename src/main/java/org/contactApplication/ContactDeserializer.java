@@ -3,6 +3,7 @@ package org.contactApplication;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
@@ -12,11 +13,15 @@ import java.io.IOException;
 //public class ContactDeserializer extends StdDeserializer<TreeMap<String,Contact>> {
 public class ContactDeserializer extends StdDeserializer<ContactData> {
 
-    public ContactDeserializer() {
-        this(null);
-    }
+//    public ContactDeserializer() {
+//        this(null);
+//    }
 
     public ContactDeserializer(Class<?> vc) {
+        super(vc);
+    }
+
+    public ContactDeserializer(JavaType vc) {
         super(vc);
     }
 

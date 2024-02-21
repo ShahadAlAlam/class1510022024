@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Task Data Export and Import -&gt; Serializer and DeSerializer done">
+    <list default="true" id="57540b32-0f9a-4070-b5ff-b3821de7d568" name="Changes" comment="Task Data Export and Import -&gt; Serializer and DeSerializer with File manager done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quizInformation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/contactApplication/ContactSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dataExpImporter/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dataExpImporter/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizTopic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/quizApplication/QuizTopic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/taskManager/TaskSerializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +64,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.quizApplication" />
       <recent name="org.taskManager" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TaskManagerApplication">
+  <component name="RunManager" selected="Application.QuizApp">
     <configuration name="ClassCastExceptionTreeSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ClassCastExceptionTreeSet" />
       <module name="class1510022024" />
@@ -114,9 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TaskManagerApplication" />
-        <item itemvalue="Application.ContactService" />
         <item itemvalue="Application.QuizApp" />
+        <item itemvalue="Application.ContactService" />
+        <item itemvalue="Application.TaskManagerApplication" />
         <item itemvalue="Application.ClassCastExceptionTreeSet" />
       </list>
     </recent_temporary>
@@ -140,7 +149,7 @@
       <workItem from="1708350540104" duration="11614000" />
       <workItem from="1708368184110" duration="259000" />
       <workItem from="1708438229364" duration="7187000" />
-      <workItem from="1708493733976" duration="2295000" />
+      <workItem from="1708493733976" duration="12360000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1707591675799</created>
@@ -247,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708443119017</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Task Data Export and Import -&gt; Serializer and DeSerializer with File manager done">
+      <created>1708496056837</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1708496056837</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,44 +293,45 @@
     <MESSAGE value="Task Manager Application Done" />
     <MESSAGE value="Contact Data Export and Import -&gt; Serializer and DeSerializer done" />
     <MESSAGE value="Task Data Export and Import -&gt; Serializer and DeSerializer done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task Data Export and Import -&gt; Serializer and DeSerializer done" />
+    <MESSAGE value="Task Data Export and Import -&gt; Serializer and DeSerializer with File manager done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task Data Export and Import -&gt; Serializer and DeSerializer with File manager done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>17</line>
+          <line>20</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>141</line>
+          <line>149</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>18</line>
+          <line>21</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>37</line>
+          <line>40</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>36</line>
+          <line>39</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java</url>
-          <line>70</line>
+          <line>85</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizTopic.java</url>
-          <line>41</line>
+          <line>49</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -338,48 +355,43 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/dataExpImporter/FileManager.java</url>
-          <line>54</line>
+          <line>41</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactDeserializer.java</url>
-          <line>28</line>
+          <line>33</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactSerializer.java</url>
-          <line>35</line>
+          <line>39</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>99</line>
+          <line>106</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>92</line>
+          <line>99</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>130</line>
+          <line>138</line>
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
-          <line>132</line>
+          <line>140</line>
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactSerializer.java</url>
-          <line>32</line>
+          <line>36</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -391,6 +403,106 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/taskManager/TaskRepo.java</url>
           <line>59</line>
           <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/contactApplication/ContactRepo.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/dataExpImporter/FileManager.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/taskManager/TaskRepo.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizSerializer.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizRepo.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizApp.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizSerializer.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizData.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/dataExpImporter/FileManager.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizDeserializer.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizSerializer.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizSerializer.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizDeserializer.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/quizApplication/QuizDeserializer.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

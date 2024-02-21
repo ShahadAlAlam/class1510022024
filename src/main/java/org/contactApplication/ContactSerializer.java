@@ -2,6 +2,7 @@ package org.contactApplication;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
@@ -12,15 +13,18 @@ import java.util.TreeMap;
 //public class ContactSerializer extends StdSerializer<TreeMap<String,Contact>> {
 public class ContactSerializer extends StdSerializer<ContactData> {
     
-    public ContactSerializer() {
-        this(null);
-    }
+//    public ContactSerializer() {
+//        this(null);
+//    }
 
 //    public ContactSerializer(Class<TreeMap<String,Contact>> t) {
     public ContactSerializer(Class<ContactData> t) {
         super(t);
     }
 
+    public ContactSerializer(JavaType t) {
+        super(t);
+    }
 //    public void serialize(
 //            TreeMap<String, Contact> value, JsonGenerator jgen, SerializerProvider provider)
 

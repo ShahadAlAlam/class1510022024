@@ -9,6 +9,14 @@ public class QuizTopic {
     private String topicName;
     private List<QuizQuestion> questions = new ArrayList<>();
 
+    public QuizTopic(String topicName, List<QuizQuestion> questions) {
+        this.topicName = topicName;
+        this.questions = questions;
+    }
+
+    public QuizTopic() {
+    }
+
     public String getTopicName() {
         return topicName;
     }
