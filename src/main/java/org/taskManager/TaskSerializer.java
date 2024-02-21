@@ -2,6 +2,7 @@ package org.taskManager;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
@@ -12,11 +13,16 @@ import java.util.Map;
 
 public class TaskSerializer extends StdSerializer<TaskData> {
 
-    public TaskSerializer() {
-        this(null);
-    }
+//    public TaskSerializer() {
+//        this(null);
+//    }
     public TaskSerializer(Class<TaskData> t) {
         super(t);
+    }
+
+
+    public TaskSerializer(JavaType type){
+        super(type);
     }
 
     @Override

@@ -1,8 +1,17 @@
 package org.dataExpImporter;
 
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.contactApplication.Contact;
+import org.springframework.asm.Type;
+import org.taskManager.TaskData;
+import org.taskManager.TaskDeserializer;
 import org.taskManager.Tasks;
 
 import java.io.*;
@@ -13,24 +22,24 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-public class FileManager <T> {
-    public void exportInformation(T dataToStore,String fileName){
+public class FileManager <T,S extends StdSerializer<T>,D extends StdDeserializer<T>> {
+    public void exportInformation(T dataToStore, String fileName, S std){
         ObjectMapper objectMapper = new ObjectMapper();
+        SimpleModule module = new SimpleModule();
+        module.addSerializer((S)std);
+        objectMapper.registerModule(module);
         try {
             String rootPath = System.getProperty("user.dir");
 //            System.out.println(rootPath );
             File obj = new File(rootPath+"/"+fileName );
-//            Gson gson = new Gson();
             if (obj.createNewFile()) {
                 FileWriter fr = new FileWriter(obj);
                 String jsonArray = objectMapper.writeValueAsString(dataToStore);
-//                fr.write(gson.toJson(this.internalContact) );
                 fr.write(jsonArray);
                 fr.close();
             } else {
                 FileWriter fr = new FileWriter(rootPath+"/"+fileName);
                 String jsonArray = objectMapper.writeValueAsString(dataToStore);
-//                fr.write(gson.toJson(this.internalContact) );
                 fr.write(jsonArray);
                 fr.close();
             }
@@ -40,7 +49,7 @@ public class FileManager <T> {
         }
     }
 
-    public T importInformation(T dataToStore,String fileName) {
+    public T importInformation(String fileName, D dstd, Class<T> type) {
         try {
 
             String rootPath = System.getProperty("user.dir");
@@ -54,10 +63,10 @@ public class FileManager <T> {
                     .lines()
                     .collect(Collectors.joining("\n"));
             ObjectMapper objectMapper = new ObjectMapper();
-//            Gson gson = new Gson();
-//            TreeMap<Long,Contact> data = gson.fromJson(sData,TreeMap.class);
-            Object o = dataToStore.getClass();
-            T data = objectMapper.readValue(sData,new TypeReference<>() {});
+            SimpleModule module = new SimpleModule();
+            module.addDeserializer( type, (D) dstd);
+            objectMapper.registerModule(module);
+            T data = objectMapper.readValue(sData,type);
 
 //            for(Map.Entry<String,Contact> c : data.entrySet()){
 //                Contact d=new Contact((Map<String, Object>) c.getValue());

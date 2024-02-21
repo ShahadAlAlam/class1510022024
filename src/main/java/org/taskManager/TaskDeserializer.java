@@ -3,6 +3,7 @@ package org.taskManager;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
@@ -15,11 +16,15 @@ import java.util.Date;
 //public class ContactDeserializer extends StdDeserializer<TreeMap<String,Contact>> {
 public class TaskDeserializer extends StdDeserializer<TaskData> {
 
-    public TaskDeserializer() {
-        this(null);
-    }
+//    public TaskDeserializer() {
+//        this(null);
+//    }
 
     public TaskDeserializer(Class<?> vc) {
+        super(vc);
+    }
+
+    public TaskDeserializer(JavaType vc) {
         super(vc);
     }
 

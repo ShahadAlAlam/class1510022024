@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.contactApplication.Contact;
 import org.contactApplication.ContactData;
 import org.contactApplication.ContactSerializer;
+import org.dataExpImporter.FileManager;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -53,35 +54,38 @@ public class TaskRepo {
     }
 
     public void exportTasks(){
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        SimpleModule module = new SimpleModule();
-        module.addSerializer(TaskData.class, new TaskSerializer());
-        objectMapper.registerModule(module);
-        TaskData conData = new TaskData(this.taskList) ;
-
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
-        objectMapper.setDateFormat(df);
-        try {
-            String rootPath = System.getProperty("user.dir");
-            File obj = new File(rootPath + "/taskInformation.txt");
-            if (obj.createNewFile()) {
-                FileWriter fr = new FileWriter(obj);
-//                String jsonArray = objectMapper.writeValueAsString(this.taskList);
-                String jsonArray = objectMapper.writeValueAsString(conData);
-                fr.write(jsonArray);
-                fr.close();
-            } else {
-                FileWriter fr = new FileWriter(rootPath + "/taskInformation.txt");
-//                String jsonArray = objectMapper.writeValueAsString(this.taskList);
-                String jsonArray = objectMapper.writeValueAsString(conData);
-                fr.write(jsonArray);
-                fr.close();
-            }
-            System.out.println("File Exported to \"" + rootPath + "\" directory");
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+        FileManager<TaskData,TaskSerializer,TaskDeserializer> fileManager = new FileManager();
+        fileManager.exportInformation(new TaskData(this.taskList),"taskInformation.txt", new TaskSerializer(TaskData.class));
+//        //Working
+//        ObjectMapper objectMapper = new ObjectMapper();
+//
+//        SimpleModule module = new SimpleModule();
+//        module.addSerializer(TaskData.class, new TaskSerializer());
+//        objectMapper.registerModule(module);
+//        TaskData conData = new TaskData(this.taskList) ;
+//
+//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
+//        objectMapper.setDateFormat(df);
+//        try {
+//            String rootPath = System.getProperty("user.dir");
+//            File obj = new File(rootPath + "/taskInformation.txt");
+//            if (obj.createNewFile()) {
+//                FileWriter fr = new FileWriter(obj);
+////                String jsonArray = objectMapper.writeValueAsString(this.taskList);
+//                String jsonArray = objectMapper.writeValueAsString(conData);
+//                fr.write(jsonArray);
+//                fr.close();
+//            } else {
+//                FileWriter fr = new FileWriter(rootPath + "/taskInformation.txt");
+////                String jsonArray = objectMapper.writeValueAsString(this.taskList);
+//                String jsonArray = objectMapper.writeValueAsString(conData);
+//                fr.write(jsonArray);
+//                fr.close();
+//            }
+//            System.out.println("File Exported to \"" + rootPath + "\" directory");
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
     }
 
     public void importInformation() {
@@ -97,12 +101,16 @@ public class TaskRepo {
                     new InputStreamReader(in, StandardCharsets.UTF_8))
                     .lines()
                     .collect(Collectors.joining("\n"));
-            ObjectMapper objectMapper = new ObjectMapper();
-            SimpleModule module = new SimpleModule();
-            module.addDeserializer(TaskData.class,new TaskDeserializer());
-            objectMapper.registerModule(module);
-            HashMap<String, Tasks> data = objectMapper.readValue(sData,TaskData.class);
-            this.taskList = data;
+            FileManager<TaskData,TaskSerializer,TaskDeserializer> fileManager = new FileManager();
+            this.taskList = fileManager.importInformation("taskInformation.txt", new TaskDeserializer(TaskData.class),TaskData.class);
+
+
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            SimpleModule module = new SimpleModule();
+//            module.addDeserializer(TaskData.class,new TaskDeserializer(TaskData.class));
+//            objectMapper.registerModule(module);
+//            HashMap<String, Tasks> data = objectMapper.readValue(sData,TaskData.class);
+//            this.taskList = data;
             System.out.println("File Successfully Imported from \""+rootPath+"\\taskInformation.txt\" ");
         } catch (Exception e) {
             System.out.println("File Failed to Import due to "+e.getMessage());
