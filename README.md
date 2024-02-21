@@ -1,4 +1,8 @@
 # Class 15 ON 10th Feb 2024
+## File Manager
+    This is a Generic class that uses com.fasterxml.jackson.databind StdSerializer and StdDeserializer 
+    to Store and Load data from file
+    
 ## Task 3 Contact Management Application
 ### Basic Details
   1. Add Contact
